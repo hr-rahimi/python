@@ -16,7 +16,22 @@
 # 4
 # 5
 
-for row in range(1,6):
-    for col in range(1,6):
-            print(row*col , end=' ' )
-    print(' ')
+# for row in range(1,6):
+#     for col in range(1,6):
+#             print(row*col , end=' ' )
+#     print(' ')
+
+
+p, d = input().split()
+p = int(p)
+d = int(d)
+
+while True:
+    if(d%p <= p/2):
+        print(d)
+        break
+    else:
+        d = d + d
+
+
+
