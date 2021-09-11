@@ -10,6 +10,7 @@
 #     print("\nWater")
     
     
+# ------------------------------------------------------------------------------    
 # 1 2 3 4 5
 # 2
 # 3
@@ -21,7 +22,7 @@
 #             print(row*col , end=' ' )
 #     print(' ')
 
-
+# -------------------------------------------------------------------------
 # p, d = input().split()
 # p = int(p)
 # d = int(d)
@@ -34,8 +35,11 @@
 #         d = d + d
 
 
-import unittest
-import re
+
+# ------------------------------------------------------------------------------
+
+# import unittest
+# 
 
 
 # اعتبارسنجی آدرس ایمیل
@@ -48,24 +52,24 @@ import re
 #     کاراکترهای انگلیسی می‌توانند کوچک یا بزرگ باشد.
 
 
-import re
+# import re
 
 
-def validate_email(email):
-    if(re.search('^\w+([\.-]?\w+)*@[\w]+\.[\D]{3}$', email)):
-        return True
-    else:
-        return False
+# def validate_email(email):
+#     if(re.search('^\w+([\.-]?\w+)*@[\w]+\.[\D]{3}$', email)):
+#         return True
+#     else:
+#         return False
 
 
-def validate_phone(number):
-    if(re.search('^09\d{9}$|^\+98\d{10}$|^0098\d{10}$', number)):
-        return True
-    else:
-        return False
+# def validate_phone(number):
+#     if(re.search('^09\d{9}$|^\+98\d{10}$|^0098\d{10}$', number)):
+#         return True
+#     else:
+#         return False
 
 
-print(validate_email('exampl#e@gmail.comm'))
+# print(validate_email('exampl#e@gmail.comm'))
 
 
 
@@ -78,6 +82,46 @@ print(validate_email('exampl#e@gmail.comm'))
 #     def test_validate_phone(self):
 #         self.assertTrue(validate_phone('09116547899'))
 #         self.assertFalse(validate_phone('091165478999'))
+
+# ---------------------------------------------------------------------------------------
+
+# a + b = C
+import re
+def funRecognize(arr):
+    a, b = arr.split('+')
+    b, c = b.split('=')
+    a = a.strip()
+    b = b.strip()
+    c = c.strip()
+
+    if(re.search('#', a)):
+        tmp = int(c) - int(b)
+        tmp = str(tmp)
+        temp2, temp3 = a.split('#')
+        if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
+            print(tmp + ' + ' + b + ' = ' + c)
+        else:
+            print('-1')
+    elif(re.search('#', b)):
+        tmp = int(c) - int(a)
+        tmp = str(tmp)
+        temp2, temp3 = b.split('#')
+        if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
+            print(a + ' + ' + tmp + ' = ' + c)
+        else:
+            print('-1')
+    elif(re.search('#', c)):
+        tmp = int(a) + int(b)
+        tmp = str(tmp)
+        temp2, temp3 = c.split('#')
+        if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
+            print(a + ' + ' + b + ' = ' + tmp)
+        else:
+            print('-1')
+        
+        
+arrayOne = "52979783 + 40838457 = #40"
+funRecognize(arrayOne)
 
 
 
