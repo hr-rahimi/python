@@ -22,16 +22,64 @@
 #     print(' ')
 
 
-p, d = input().split()
-p = int(p)
-d = int(d)
+# p, d = input().split()
+# p = int(p)
+# d = int(d)
 
-while True:
-    if(d%p <= p/2):
-        print(d)
-        break
+# while True:
+#     if(d%p <= p/2):
+#         print(d)
+#         break
+#     else:
+#         d = d + d
+
+
+import unittest
+import re
+
+
+# اعتبارسنجی آدرس ایمیل
+
+# یک آدرس ایمیل معتبر به شکل username@domain.tld است، به‌طوری که:
+
+#     نام کاربری تنها از کاراکتر انگلیسی، عدد، آندرلاین و نقطه تشکیل شده است.
+#     دامنه تنها از کاراکتر انگلیسی یا عدد تشکیل شده است.
+#     tld یک واژه‌ی سه‌حرفی از کاراکترهای انگلیسی است.
+#     کاراکترهای انگلیسی می‌توانند کوچک یا بزرگ باشد.
+
+
+import re
+
+
+def validate_email(email):
+    if(re.search('^\w+([\.-]?\w+)*@[\w]+\.[\D]{3}$', email)):
+        return True
     else:
-        d = d + d
+        return False
+
+
+def validate_phone(number):
+    if(re.search('^09\d{9}$|^\+98\d{10}$|^0098\d{10}$', number)):
+        return True
+    else:
+        return False
+
+
+print(validate_email('exampl#e@gmail.comm'))
+
+
+
+# class ScoreListTest(unittest.TestCase):
+
+#     def test_validate_email(self):
+#         self.assertTrue(validate_email('test.test91@yahoo.com'))
+#         self.assertFalse(validate_email('exampl#e@gmail.comm'))
+
+#     def test_validate_phone(self):
+#         self.assertTrue(validate_phone('09116547899'))
+#         self.assertFalse(validate_phone('091165478999'))
+
+
 
 
 
