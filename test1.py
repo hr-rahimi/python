@@ -86,42 +86,87 @@
 # ---------------------------------------------------------------------------------------
 
 # a + b = C
-import re
-def funRecognize(arr):
-    a, b = arr.split('+')
-    b, c = b.split('=')
-    a = a.strip()
-    b = b.strip()
-    c = c.strip()
+# import re
+# def funRecognize(arr):
+#     a, b = arr.split('+')
+#     b, c = b.split('=')
+#     a = a.strip()
+#     b = b.strip()
+#     c = c.strip()
 
-    if(re.search('#', a)):
-        tmp = int(c) - int(b)
-        tmp = str(tmp)
-        temp2, temp3 = a.split('#')
-        if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
-            print(tmp + ' + ' + b + ' = ' + c)
-        else:
-            print('-1')
-    elif(re.search('#', b)):
-        tmp = int(c) - int(a)
-        tmp = str(tmp)
-        temp2, temp3 = b.split('#')
-        if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
-            print(a + ' + ' + tmp + ' = ' + c)
-        else:
-            print('-1')
-    elif(re.search('#', c)):
-        tmp = int(a) + int(b)
-        tmp = str(tmp)
-        temp2, temp3 = c.split('#')
-        if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
-            print(a + ' + ' + b + ' = ' + tmp)
-        else:
-            print('-1')
+#     if(re.search('#', a)):
+#         tmp = int(c) - int(b)
+#         tmp = str(tmp)
+#         temp2, temp3 = a.split('#')
+#         if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
+#             print(tmp + ' + ' + b + ' = ' + c)
+#         else:
+#             print('-1')
+#     elif(re.search('#', b)):
+#         tmp = int(c) - int(a)
+#         tmp = str(tmp)
+#         temp2, temp3 = b.split('#')
+#         if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
+#             print(a + ' + ' + tmp + ' = ' + c)
+#         else:
+#             print('-1')
+#     elif(re.search('#', c)):
+#         tmp = int(a) + int(b)
+#         tmp = str(tmp)
+#         temp2, temp3 = c.split('#')
+#         if(re.search('^'+temp2+'\d+'+temp3+'$', tmp)):
+#             print(a + ' + ' + b + ' = ' + tmp)
+#         else:
+#             print('-1')
         
         
-arrayOne = "52979783 + 40838457 = #40"
-funRecognize(arrayOne)
+# arrayOne = "52979783 + 40838457 = #40"
+# funRecognize(arrayOne)
+
+
+# n = int(input())
+# list = []
+# while n != 0:
+#     list.append(n)
+#     n = int(input())
+
+# for item in list[::-1]:
+#     print(item)
+# ////////////////////////////////////////////////////////////////////////////////////
+
+# n, m = input("Enter Rows And Columns :\n> ").split(' ')
+# print(n, m)
+
+# fun newbomblist()
+
+
+# map = []
+# for x in range(int(n)):
+#     map.append([])
+#     for y in range(int(m)):
+#         map[x].append(0)
+        
+        
+# bombs = input("Number Of Bombs:\n> ")
+# for bomb in range(bombs):
+#     lstbombs = []
+    
+    
+# //////////////////////////////////////////////////////////////////////////////////////////
+# print(*(x for y,x in enumerate(map(int, input().split()))if (y+1) % 6 == 0 and x%6==0))
+
+
+# ////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+list1=[100,2,30]
+avrage = 0
+maxi = 0
+miyan = 0
+list1= sorted(list1)
+for i in list1:
+    avrage = 
 
 
 
